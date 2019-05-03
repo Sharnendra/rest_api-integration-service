@@ -28,6 +28,19 @@ public class MailingService {
         emailProperties.put("mail.smtp.port", "587");
         emailProperties.put("mail.smtp.auth", "true");
         emailProperties.put("mail.smtp.starttls.enable", "true");
+        
+		/*
+		 * emailProperties.put("mail.smtp.user", "sharnendradey@gmail.com");
+		 * emailProperties.put("mail.smtp.host", "smtp.gmail.com");
+		 * emailProperties.put("mail.smtp.starttls.enable","true");
+		 * emailProperties.put("mail.smtp.auth", "true");
+		 * emailProperties.put("mail.smtp.debug", "true");
+		 * emailProperties.put("mail.smtp.socketFactory.port", "465");
+		 * emailProperties.put("mail.smtp.socketFactory.class",
+		 * "javax.net.ssl.SSLSocketFactory");
+		 * emailProperties.put("mail.smtp.socketFactory.fallback", "false");
+		 */
+        
         mailSession = Session.getInstance(emailProperties,  new Authenticator() {
 
             @Override
@@ -37,13 +50,14 @@ public class MailingService {
             }
 
         });
+		/* mailSession.setDebug(true); */
     }
 	
 	private MimeMessage draftEmailMessage() throws AddressException, MessagingException
     {
         String[] toEmails = { "sharnendradey@gmail.com" };
         String emailSubject = "Test email subject";
-        String emailBody = "This is an email sent by <b>//howtodoinjava.com</b>.";
+        String emailBody = "This is an email sent by <b>//Test For Email</b>.";
         MimeMessage emailMessage = new MimeMessage(mailSession);
         /**
          * Set the mail recipients
@@ -93,26 +107,4 @@ public class MailingService {
 		}
         return "Email sent successfully.";
 	}
-	
-	/*
-	 * public void mailer() { String fromUser = "sharnendradey@gmail.com"; String
-	 * fromUserEmailPassword = "kakkarotssj@6";
-	 * 
-	 * String emailHost = "smtp.gmail.com";
-	 * org.simplejavamail.mailer.config.ServerConfig s = new
-	 * org.simplejavamail.mailer.config.ServerConfig(emailHost, 587, fromUser,
-	 * fromUserEmailPassword); org.simplejavamail.mailer.config.ProxyConfig p = new
-	 * org.simplejavamail.mailer.config.ProxyConfig( "proxy.cognizant.com", 6050,
-	 * "767967", "Kakkarotssj@6");
-	 * 
-	 * Mailer mailer = new Mailer(s, TransportStrategy.SMTP_TLS, p);
-	 * 
-	 * mailer.sendMail(new EmailBuilder().from("mytest",
-	 * "sharnendradey@gmail.com").to("test", "sharnendradey@gmail.com")
-	 * .subject("This is the subject line").
-	 * textHTML("<h1>This is the actual message</h1>").build());
-	 * 
-	 * System.out.println("Message sent..."); }
-	 */
-
 }
