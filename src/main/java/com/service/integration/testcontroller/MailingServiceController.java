@@ -14,7 +14,8 @@ public class MailingServiceController {
 	
 	@PostMapping("/sendMail")
     public String sendMail() {
-		mailingService.sendMail("sharnendradey@gmail.com");
+		//mailingService.sendMail("sharnendradey@gmail.com");
+		mailingService.sendMail2();
         return "Success";
     }
 }

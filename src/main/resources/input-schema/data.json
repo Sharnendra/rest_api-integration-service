@@ -1,6 +1,36 @@
 {
-    "id": 1,
-    "name": "A green door",
-    "price": 12.50,
-    "tags": ["home", "green"]
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "className": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "className"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "className": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "className"
+      ]
+    }
+  ]
 }
