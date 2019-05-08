@@ -11,4 +11,7 @@ public interface UserRepository extends JpaRepository<UserDetails, Integer> {
 
 	@Query("FROM UserDetails t where t.name = :name") 
 	UserDetails findUserByName(@Param("name") String name);
+	
+	@Query("SELECT count(*) FROM UserDetails t where t.name = :name and t.phoneOTP = :phoneOtp")
+	int validatePhoneOTP(@Param("phoneOtp") String phoneOtp,@Param("name") String name);
 }

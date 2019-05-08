@@ -29,18 +29,17 @@ public class MailingService {
         emailProperties.put("mail.smtp.auth", "true");
         emailProperties.put("mail.smtp.starttls.enable", "true");
         
-		/*
-		 * emailProperties.put("mail.smtp.user", "sharnendradey@gmail.com");
-		 * emailProperties.put("mail.smtp.host", "smtp.gmail.com");
-		 * emailProperties.put("mail.smtp.starttls.enable","true");
-		 * emailProperties.put("mail.smtp.auth", "true");
-		 * emailProperties.put("mail.smtp.debug", "true");
-		 * emailProperties.put("mail.smtp.socketFactory.port", "465");
-		 * emailProperties.put("mail.smtp.socketFactory.class",
-		 * "javax.net.ssl.SSLSocketFactory");
-		 * emailProperties.put("mail.smtp.socketFactory.fallback", "false");
-		 */
-        
+		
+		 emailProperties.put("mail.smtp.user", "sharnendradey@gmail.com");
+		 emailProperties.put("mail.smtp.host", "smtp.gmail.com");
+		 emailProperties.put("mail.smtp.starttls.enable","true");
+		 emailProperties.put("mail.smtp.auth", "true");
+		 emailProperties.put("mail.smtp.debug", "true");
+		 emailProperties.put("mail.smtp.socketFactory.port", "465");
+		 emailProperties.put("mail.smtp.socketFactory.class",
+		 "javax.net.ssl.SSLSocketFactory");
+		 emailProperties.put("mail.smtp.socketFactory.fallback", "false");
+		         
         mailSession = Session.getInstance(emailProperties,  new Authenticator() {
 
             @Override
@@ -50,7 +49,7 @@ public class MailingService {
             }
 
         });
-		/* mailSession.setDebug(true); */
+		mailSession.setDebug(true);
     }
 	
 	private MimeMessage draftEmailMessage() throws AddressException, MessagingException
