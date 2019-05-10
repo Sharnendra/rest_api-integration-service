@@ -9,7 +9,7 @@ service:
        allowedQueryParams: 
         user,
         user1255
-       inputSchemaFile: 
+       inputSchemaFile: data.json
        outputSchemaFile: output-schema
        inputValidationRequired : true
        outputValidationRequired : true
@@ -28,7 +28,7 @@ service:
        endpoint: localhost:8080/hello2
        allowedQueryParams: 
          user2
-       inputSchemaFile: 
+       inputSchemaFile: data.json
        outputSchemaFile:
        inputValidationRequired : true
        outputValidationRequired : true
