@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Integration {
-//HRSS APP
+//HRSS APP Code
 	public static void main(String[] args) {
 		SpringApplication.run(Integration.class, args);
 	}
