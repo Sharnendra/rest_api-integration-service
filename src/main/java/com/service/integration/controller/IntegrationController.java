@@ -23,6 +23,7 @@ import com.service.integration.config.ConfigService;
 import com.service.integration.service.JSONValidationService;
 
 @RestController
+@RequestMapping("/unsecure")
 public class IntegrationController {
 	
 	@Autowired
