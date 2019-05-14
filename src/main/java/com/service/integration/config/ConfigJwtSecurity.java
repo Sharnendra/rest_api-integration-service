@@ -21,7 +21,7 @@ import com.service.integration.security.JwtSuccessHandler;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
 @Configuration
-public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
+public class ConfigJwtSecurity extends WebSecurityConfigurerAdapter {
 
 
     @Autowired

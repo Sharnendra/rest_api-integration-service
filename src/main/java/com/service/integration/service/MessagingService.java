@@ -5,13 +5,13 @@ import java.net.URLEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.service.integration.config.MessagingConfig;
+import com.service.integration.config.ConfigMessenger;
 
 @Service
 public class MessagingService {
 	
 	@Autowired
-	private MessagingConfig smsConfig;
+	private ConfigMessenger smsConfig;
 	
 	public String sendSMSOnPhone(String phonenumber) {
 		try {

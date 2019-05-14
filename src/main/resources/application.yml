@@ -3,3 +3,4 @@ spring:
     include:
     - service
     - messaging
+    - methodsecurity

@@ -1,6 +1,6 @@
 package com.service.integration.config;
 
-public class ServiceBasedConfig{
+public class ServiceBasedConfigurations{
 	
 	private String servicename;
 	private CommonConfigurations commonConfigurations;
@@ -18,7 +18,6 @@ public class ServiceBasedConfig{
 	}
 	@Override
 	public String toString() {
-		return "             ServiceBasedConfig [servicename=" + servicename + ", commonConfigurations=" + commonConfigurations
-				+ "]";
+		return "ServiceBasedConfig [servicename=" + servicename + ", commonConfigurations=" + commonConfigurations + "]";
 	}
 }

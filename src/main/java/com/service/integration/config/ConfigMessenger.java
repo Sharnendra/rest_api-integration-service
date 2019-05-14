@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MessagingConfig {
+public class ConfigMessenger {
 
 	@Value("${smsconfig-apikey}")
 	private String apiKey;

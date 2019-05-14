@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.service.integration.constraint.Roles;
+import com.service.integration.constraint.Secured;
 import com.service.integration.modal.JwtUser;
 import com.service.integration.security.JwtGenerator;
 
@@ -31,7 +31,7 @@ public class TokenController {
     }
     
     @PostMapping("/details")
-    @Roles({"ADMIN"})
+    @Secured(value={"ADMIN"},indentify="GET_TOKEN_DETAILS")
     public String tokendetails(HttpServletRequest httpServletRequest)
     {
     	String header = httpServletRequest.getHeader("Authorization");

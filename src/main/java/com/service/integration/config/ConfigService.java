@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 public class ConfigService implements InitializingBean{
 
 	private String serviceTypeHeader;
-	private List<ServiceBasedConfig> servicemap = new ArrayList<ServiceBasedConfig>();
+	private List<ServiceBasedConfigurations> servicemap = new ArrayList<ServiceBasedConfigurations>();
 	private Map<String,CommonConfigurations> servicemapper = new HashMap<String,CommonConfigurations>();
 	
 	public Map<String, CommonConfigurations> getServicemapper() {
@@ -38,11 +38,11 @@ public class ConfigService implements InitializingBean{
 		this.serviceTypeHeader = serviceTypeHeader;
 	}
 
-	public List<ServiceBasedConfig> getServicemap() {
+	public List<ServiceBasedConfigurations> getServicemap() {
 		return servicemap;
 	}
 
-	public void setServicemap(List<ServiceBasedConfig> servicemap) {
+	public void setServicemap(List<ServiceBasedConfigurations> servicemap) {
 		this.servicemap = servicemap;
 	}
 	
@@ -58,7 +58,7 @@ public class ConfigService implements InitializingBean{
 		
 		setServicemapper(servicemap.stream()
 						.collect(
-						   Collectors.toMap(ServiceBasedConfig::getServicename,ServiceBasedConfig::getCommonConfigurations)
+						   Collectors.toMap(ServiceBasedConfigurations::getServicename,ServiceBasedConfigurations::getCommonConfigurations)
 						));
 	}
 }

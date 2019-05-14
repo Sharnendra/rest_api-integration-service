@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD) //can use in method only.
-public @interface Roles {
+public @interface Secured {
 	public String[] value() default "";
+	public String indentify() default "";
 }
